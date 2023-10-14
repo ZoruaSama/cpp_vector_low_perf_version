@@ -1,27 +1,27 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Vector.h"
+
 
 using namespace std;
 using namespace zorua::stl;
 
 int main()
 {
+    vector<int> vec;
     Vector<int> v;
-    for (int i = 0; i < 5; ++i)
-    {
+    for (int i = 0; i < 5; ++i){
         v.push_back(i);
         cout << v[i] << " " << v.capacity() << endl;
     }
     cout << "v.reverse()" << endl;
     v.reverse();
-    for (int i = 0; i < 5; ++i)
-    {
+    for (int i = 0; i < 5; ++i){
         cout << v[i] << " " << v.capacity() << endl;
     }
     cout << "Test for Iterator" << endl;
-    for (Vector<int>::Iterator it = v.begin(); it != v.end(); it++)
-    {
+    for (Vector<int>::Iterator it = v.begin(); it != v.end(); it++){
         cout << (*it) << endl;
     }
     cout << "Test for cout" << endl;

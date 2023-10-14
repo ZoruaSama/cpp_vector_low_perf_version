@@ -4,6 +4,7 @@
 #pragma once
 #include<stdexcept>
 #include<iostream>
+#include <typeinfo>
 
 namespace zorua{
 namespace stl{
@@ -25,12 +26,13 @@ public:
     void reverse();
 
     friend std::ostream& operator<<(std::ostream& cout, Vector<T>& v){
-        cout<<"[";
+        // cout << "(type: " << (typeid(T).name()) << ") ";
+        cout << "[";
         for (unsigned i = 0; i < v.size(); ++i){
             cout << v[i];
             if (i != v.size() - 1) cout << ", ";
         }
-        cout<<"]";
+        cout << "]";
         return cout;
     };
 
